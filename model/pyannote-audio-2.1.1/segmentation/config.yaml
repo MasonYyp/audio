@@ -1,0 +1,16 @@
+task:
+  _target_: pyannote.audio.tasks.Segmentation
+  duration: 5.0
+  max_num_speakers: 3
+model:
+  _target_: pyannote.audio.models.segmentation.PyanNet
+  sincnet:
+    stride: 10
+  lstm:
+    hidden_size: 128
+    num_layers: 4
+    bidirectional: true
+    monolithic: true
+  linear:
+    hidden_size: 128
+    num_layers: 2
